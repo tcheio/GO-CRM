@@ -1,4 +1,4 @@
-# 📇 Mini-CRM (CLI) en Go
+# 📇 Mini-CRM (CLI) en Go - CHEIO THOMAS
 
 Un petit CRM en ligne de commande développé en **Go**.  
 Il permet de gérer une liste de contacts en mémoire : **ajout, suppression, mise à jour et affichage**.
