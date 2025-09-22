@@ -13,8 +13,6 @@ Placez-vous dans le dossier où se trouvent tous vos fichiers `.go` puis exécut
 go run .
 ```
 
-⚠️ **Ne lancez pas uniquement `main.go`** (ex: `go run main.go`) car les autres fichiers (`add.go`, `list.go`, etc.) ne seraient pas compilés.
-
 ---
 
 ## 📖 Fonctionnalités
