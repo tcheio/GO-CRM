@@ -3,9 +3,9 @@ package storage
 import "errors"
 
 type Contact struct {
-	ID    int
-	Name  string
-	Email string
+	ID    int    `json:"id"`
+	Name  string `json:"name"`
+	Email string `json:"email"`
 }
 
 type Storer interface {
@@ -16,6 +16,7 @@ type Storer interface {
 	Delete(id int) error
 }
 
+// Implémentation en mémoire (utile pour tests/démo rapide)
 type MemoryStore struct {
 	contacts map[int]*Contact
 	nextID   int
@@ -46,7 +47,7 @@ func (ms *MemoryStore) GetAll() ([]*Contact, error) {
 func (ms *MemoryStore) GetByID(id int) (*Contact, error) {
 	contact, ok := ms.contacts[id]
 	if !ok {
-		return nil, errors.New("Contact not found")
+		return nil, errors.New("contact introuvable")
 	}
 	return contact, nil
 }
@@ -67,7 +68,7 @@ func (ms *MemoryStore) Update(id int, newName, newEmail string) error {
 
 func (ms *MemoryStore) Delete(id int) error {
 	if _, ok := ms.contacts[id]; !ok {
-		return errors.New("Contact not found")
+		return errors.New("contact introuvable")
 	}
 	delete(ms.contacts, id)
 	return nil
